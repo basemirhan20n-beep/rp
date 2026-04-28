@@ -293,7 +293,6 @@ def main():
     app.add_handler(CommandHandler("sezon_sifirla", cmd_sezon_sifirla))
     app.add_handler(CommandHandler("oyuncu_istatistik", cmd_oyuncu_istatistik))
     app.add_handler(CommandHandler("altyapi", cmd_altyapi))
-    app.add_handler(CommandHandler("lig_guncelle", lambda u,c: lig_guncelle(u,c, fdb)))  # fdb futbol_db'den
     app.add_handler(CallbackQueryHandler(buton_handler))
     app.job_queue.run_daily(gunluk_ceza_isle, time=datetime.strptime("23:59", "%H:%M").time(), name="gunluk_ceza")
     logger.info("Bot başlatılıyor...")
