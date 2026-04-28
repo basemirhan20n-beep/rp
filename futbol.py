@@ -290,7 +290,7 @@ async def futbol_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     if data == "cark": await query.answer(); await cmd_cark(update, context); return True
     if data == "loncalar":
         loncalar = fdb.lonca_listesi()
-        metin = "👑 *Loncalar*\n"+"\n".join(f"{l['lonca_id']}: {l['isim']} (Puan:{l['puan']})" for l in loncalar) if loncalar else "Hiç lonca yok."
+        metin = "👑 *Loncalar*\n"+"\\n".join(f"{l['lonca_id']}: {l['isim']} (Puan:{l['puan']})" for l in loncalar) if loncalar else "Hiç lonca yok."
         await query.edit_message_text(metin, parse_mode="Markdown")
         return True
     return False
